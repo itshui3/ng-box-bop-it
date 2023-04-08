@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
+import { PiecesMap } from '../pieces-map';
 
 @Component({
-  selector: 'app-player',
+  selector: PiecesMap.player,
   templateUrl: './player.component.html',
-  styleUrls: ['./player.component.css']
+  styleUrls: ['./player.component.css'],
 })
-export class PlayerComponent {
-
-}
+export class PlayerComponent {}

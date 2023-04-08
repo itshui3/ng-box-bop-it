@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
+import { PiecesMap } from '../pieces-map';
 
 @Component({
-  selector: 'app-dead-block',
+  selector: PiecesMap.deadBlock,
   templateUrl: './dead-block.component.html',
-  styleUrls: ['./dead-block.component.css']
+  styleUrls: ['./dead-block.component.css'],
 })
-export class DeadBlockComponent {
-
-}
+export class DeadBlockComponent {}
