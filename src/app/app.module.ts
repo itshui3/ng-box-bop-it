@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BoardModule } from './components/board/board.module';
@@ -12,13 +12,15 @@ import { SupportersModule } from './components/supporters/supporters.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     BoardModule,
     PiecesModule,
     SupportersModule,
   ],
-  providers: [ActivatedRoute],
+  providers: [],
+  exports: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
