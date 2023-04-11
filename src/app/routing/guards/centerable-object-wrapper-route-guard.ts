@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 // route components
 import { BoardComponent } from '../../components/board/board.component';
@@ -9,8 +9,10 @@ import { CenterableObjectWrapperComponent } from '../../components/supporters/ce
 
 export const centerableObjectWrapperRouteGuard = () => {
   const route = inject(ActivatedRoute);
-  route.params.subscribe((params) => {
-    console.log('params in route guard', params);
-  });
+  console.log('route', route.snapshot);
+
+  // route.params.subscribe((params) => {
+  //   console.log('params in route guard', params);
+  // });
   return true;
 };

@@ -1,6 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import {
+  Router,
+  ActivatedRoute,
+  RouterModule,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot,
+  RouterState,
+} from '@angular/router';
+import * as RouterProps from '@angular/router';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
