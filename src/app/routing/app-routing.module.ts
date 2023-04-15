@@ -3,16 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 // route components
 import { BoardComponent } from '../components/board/board.component';
 
-// lab entrypoint
+// lab
 import { CenterableObjectWrapperComponent } from '../components/supporters/centerable-object-wrapper/centerable-object-wrapper.component';
-import { centerableObjectWrapperRouteGuard } from './guards/centerable-object-wrapper-route-guard';
+// pieces
+import { PlayerComponent } from '../components/pieces/player/player.component';
+import { DeadBlockComponent } from '../components/pieces/dead-block/dead-block.component';
 
 export const routes: Routes = [
   { path: 'board', component: BoardComponent },
   {
-    path: 'lab/:id',
+    path: 'lab',
     component: CenterableObjectWrapperComponent,
-    canActivate: [centerableObjectWrapperRouteGuard],
+    children: [
+      { path: 'player', component: PlayerComponent },
+      { path: 'deadblock', component: DeadBlockComponent },
+    ],
   },
 ];
 
