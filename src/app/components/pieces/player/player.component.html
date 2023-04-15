@@ -1,1 +1,5 @@
-<div class="player"></div>
+<div
+  *ngIf="position$ | async as position"
+  class="player"
+  [style.left.px]="position['left']"
+></div>

@@ -1,2 +1,9 @@
-<p>board works!</p>
-<div class="boardContainer"></div>
+<div class="boardContainer">
+  <app-player></app-player>
+</div>
+<button (mousedown)="moveLeftStart()" (mouseup)="moveLeftStop()">
+  move left
+</button>
+<button (mousedown)="moveRightStart()" (mouseup)="moveRightStop()">
+  move right
+</button>

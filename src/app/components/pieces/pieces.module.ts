@@ -4,9 +4,8 @@ import { PlayerModule } from './player/player.module';
 import { DeadBlockComponent } from './dead-block/dead-block.component';
 
 @NgModule({
-  declarations: [
-    DeadBlockComponent
-  ],
+  declarations: [DeadBlockComponent],
   imports: [CommonModule, PlayerModule],
+  exports: [PlayerModule],
 })
 export class PiecesModule {}
