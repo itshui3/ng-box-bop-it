@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { PiecesMap } from '../pieces-map';
 import {
-  PlayerMovementService,
+  MovementService,
   PlayerPosition,
-} from 'src/app/services/player-movement.service';
+} from 'src/app/services/movement.service';
 
 @Component({
   selector: PiecesMap.player,
@@ -14,7 +14,7 @@ import {
 export class PlayerComponent implements OnInit {
   public position$: Observable<PlayerPosition> | undefined;
 
-  constructor(private _movement: PlayerMovementService) {}
+  constructor(private _movement: MovementService) {}
 
   ngOnInit() {
     this.position$ = this._movement.position$;

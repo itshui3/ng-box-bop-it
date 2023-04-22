@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './player.component';
-import { PlayerMovementService } from 'src/app/services/player-movement.service';
+import { MovementService } from 'src/app/services/movement.service';
 
 @NgModule({
-  providers: [PlayerMovementService],
+  providers: [MovementService],
   declarations: [PlayerComponent],
   imports: [CommonModule],
   exports: [PlayerComponent],

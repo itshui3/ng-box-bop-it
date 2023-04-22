@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerMovementService } from '../../services/player-movement.service';
+import { MovementService } from '../../services/movement.service';
 
 @Component({
   selector: 'app-board',
@@ -7,7 +7,7 @@ import { PlayerMovementService } from '../../services/player-movement.service';
   styleUrls: ['./board.component.css'],
 })
 export class BoardComponent {
-  constructor(private _movement: PlayerMovementService) {}
+  constructor(private _movement: MovementService) {}
 
   public moveRightStart() {
     this._movement.moveRightStart();
