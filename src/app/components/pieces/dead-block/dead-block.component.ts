@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PiecesMap } from '../pieces-map';
+import { PiecesMap } from '../../../lib/pieces-map';
 
 @Component({
   selector: PiecesMap.deadBlock,

@@ -1,5 +1,8 @@
 <div
   *ngIf="position$ | async as position"
   class="player"
-  [style.left.px]="position['left']"
+  [style.left.px]="position['x']"
+  [style.bottom.px]="position['y']"
+  [style.width.px]="position['w']"
+  [style.height.px]="position['h']"
 ></div>

@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { PiecesMap } from '../pieces-map';
+import { PiecesMap } from '../../../lib/pieces-map';
 import {
   MovementService,
   PlayerPosition,
 } from 'src/app/services/movement.service';
+import {
+  PositionsService,
+  IPosition,
+} from 'src/app/services/positions.service';
 
 @Component({
   selector: PiecesMap.player,
@@ -12,14 +16,15 @@ import {
   styleUrls: ['./player.component.css'],
 })
 export class PlayerComponent implements OnInit {
-  public position$: Observable<PlayerPosition> | undefined;
+  public position$?: Observable<IPosition | undefined>;
 
-  constructor(private _movement: MovementService) {}
+  constructor(
+    private _movement: MovementService,
+    private _positions: PositionsService
+  ) {}
 
   ngOnInit() {
-    this.position$ = this._movement.position$;
-    this.position$.pipe(
-      tap((v) => console.log('position value in subscription', v))
-    );
+    // why are my premises not sufficient for typescript to make this inference?
+    this.position$ = this._positions.selectPiecePosition('player');
   }
 }
